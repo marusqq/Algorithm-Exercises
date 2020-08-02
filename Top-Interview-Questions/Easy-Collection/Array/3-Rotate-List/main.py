@@ -1,16 +1,26 @@
 class Solution:
-    def rotate(self, nums, k: int):
-        #custom logic goes here
 
-        for k in range(0, k):
-            nums = nums[-1:] + nums[:-1]
-            #k -= 1
+    def reverse(self, list, start, finish) -> list:
+        if start is None and finish is None:
+            return list[::-1]
+        elif start == 0:
+            return list[start:finish][::-1] + list[finish:]
+        else:
+            return list[:start] + list[start:finish][::-1]
+
+
+
+    def rotate(self, nums, k: int) -> None:
+
+        length_num = len(nums)
+        k = k % length_num
+
+        nums = self.reverse(nums, None, None)
+        nums = self.reverse(nums, 0, k - 1)
+        nums = self.reverse(nums, k, length_num)
 
         return nums
-    
-ans = Solution()
-input_nums = [1,2,3,4,5,6,7]
-k = 3
-print(ans.rotate(input_nums, k))
 
-    
+ans = Solution()
+list_of_num = [1,2,3,4,5]
+ans.rotate(list_of_num, 1)
