@@ -30,7 +30,7 @@ class Bucket:
 class MyHashSet:
 
     def __init__(self):
-        self.key_space = 4196
+        self.key_space = 512
         self.hash_table = []
 
         for _ in range(0, self.key_space):
