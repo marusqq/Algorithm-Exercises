@@ -13,5 +13,5 @@ class Solution:
             return False
 
 ans = Solution
-input_word = 'USA'
+input_word = 'FlaG'
 print(ans.detectCapitalUse(ans, word = input_word))

@@ -30,41 +30,44 @@ def look_for_diff(expected, output):
 
 #testing below
 obj = o.MyHashSet()
-output = []
-actions, numbers, expected_output = read_test_case('testcase_24.log')
+obj.add(3502)
+obj.remove(3)
+obj.contains(3)
+# output = []
+# actions, numbers, expected_output = read_test_case('testcase_24.log')
 
-contains_count = 0
-add_count = 0
-remove_count = 0
-MyHashSet_count = 0
+# contains_count = 0
+# add_count = 0
+# remove_count = 0
+# MyHashSet_count = 0
 
-expected = expected_output.split(',')
-for i in range(0, len(actions) - 1):
-    actions[i] = actions[i].strip('"')
-    numbers[i] = numbers[i].strip('[')
-    numbers[i] = numbers[i].strip(']')
+# expected = expected_output.split(',')
+# for i in range(0, len(actions) - 1):
+#     actions[i] = actions[i].strip('"')
+#     numbers[i] = numbers[i].strip('[')
+#     numbers[i] = numbers[i].strip(']')
 
-    if actions[i] == 'add':
-        add_count += 1
-        obj.add(int(numbers[i]))
-        output.append('null')
-    elif actions[i] == 'MyHashSet':
-        MyHashSet_count += 1
-        output.append('null')
-    elif actions[i] == 'remove':
-        remove_count += 1
-        obj.remove(int(numbers[i]))
-        output.append('null')
-    elif actions[i] == 'contains':
-        contains_count += 1
-        _ = obj.contains(int(numbers[i]))
-        output.append(_)
-    else:
-        print(actions[i])
+#     if actions[i] == 'add':
+#         add_count += 1
+#         obj.add(int(numbers[i]))
+#         output.append('null')
+#     elif actions[i] == 'MyHashSet':
+#         MyHashSet_count += 1
+#         output.append('null')
+#     elif actions[i] == 'remove':
+#         remove_count += 1
+#         obj.remove(int(numbers[i]))
+#         output.append('null')
+#     elif actions[i] == 'contains':
+#         contains_count += 1
+#         _ = obj.contains(int(numbers[i]))
+#         output.append(_)
+#     else:
+#         print(actions[i])
 
-print('add count:', add_count)
-print('MyHashSet count:', MyHashSet_count)
-print('remove count:', remove_count)
-print('contains count:', contains_count)
+# print('add count:', add_count)
+# print('MyHashSet count:', MyHashSet_count)
+# print('remove count:', remove_count)
+# print('contains count:', contains_count)
 
-look_for_diff(expected, output)
+# look_for_diff(expected, output)
