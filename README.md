@@ -1,2 +1,2 @@
 # Algorithm-Exercises
-Various exercises to boost my brain power. Mostly from LeetCode
+my LeetCode exercise solutions 
